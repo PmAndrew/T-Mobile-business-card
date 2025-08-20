@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>T-Mobile • Digital Business Card</title>
+  <meta name="description" content="Digital business card for T-Mobile Big Elk Mall (Store #5503) — Elkton, MD." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --magenta:#e20074;
+      --magenta-dark:#a00052;
+      --white:#ffffff;
+      --gray:#f5f5f5;
+      --black:#0a0a0a;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial;
+      color:var(--black);
+      background:var(--white);
+    }
+    .wrap{ max-width:720px; margin:0 auto; padding:28px; }
+    .card{
+      border-radius:16px; background:var(--white);
+      border:2px solid var(--magenta);
+      box-shadow:0 6px 20px rgba(0,0,0,.08);
+    }
+    header{
+      padding:24px; text-align:center; background:var(--magenta); color:var(--white);
+      border-radius:14px 14px 0 0;
+    }
+    header h1{margin:0; font-size:28px; font-weight:800;}
+    header .subtitle{margin-top:6px; font-size:14px; font-weight:400;}
+    .idpill{display:inline-block; margin-top:10px; padding:6px 14px; background:var(--white); color:var(--magenta); border-radius:999px; font-weight:700; font-size:13px;}
+    .content{padding:24px; display:grid; gap:20px;}
+    .panel h2{margin:0 0 10px; font-size:16px; font-weight:700; color:var(--magenta-dark);}
+    .kv{display:grid; gap:10px;}
+    .kv div{display:grid; gap:2px;}
+    .k{font-size:13px; color:#444;}
+    .v{font-size:15px; font-weight:600;}
+    .btn{
+      display:block; text-align:center; padding:14px; border-radius:8px; font-weight:700;
+      text-decoration:none; color:var(--white); background:var(--magenta);
+      margin-bottom:10px;
+    }
+    .btn:hover{background:var(--magenta-dark);}
+    footer{padding:14px; font-size:12px; color:#555; text-align:center;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <h1>T-Mobile</h1>
+        <div class="subtitle">Big Elk Mall • Elkton, MD</div>
+        <div class="idpill">Store #5503</div>
+      </header>
+      <div class="content">
+        <section class="panel">
+          <h2>Contact</h2>
+          <div class="kv">
+            <div>
+              <span class="k">Address</span>
+              <span class="v">123A Big Elk Mall, Elkton, MD 21921</span>
+            </div>
+            <div>
+              <span class="k">Phone</span>
+              <span class="v"><a href="tel:+14432078142">(443) 207-8142</a></span>
+            </div>
+            <div>
+              <span class="k">Manager</span>
+              <span class="v">Joseph</span>
+            </div>
+            <div>
+              <span class="k">Retailer</span>
+              <span class="v">Owned and operated by Connectivity Source</span>
+            </div>
+          </div>
+        </section>
+        <section class="panel">
+          <h2>Quick Links</h2>
+          <a class="btn" href="https://www.t-mobile.com/stores/bd/t-mobile-elkton-md-21921-5503" target="_blank">Store page</a>
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=T-Mobile%20123%20Big%20Elk%20Mall%20Elkton%20MD%2021921" target="_blank">Google reviews & directions</a>
+        </section>
+      </div>
+      <footer>
+        © T-Mobile Authorized Retailer • Connectivity Source
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

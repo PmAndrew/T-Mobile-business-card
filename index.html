@@ -1,96 +1,180 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>T-Mobile • Digital Business Card</title>
-  <meta name="description" content="Digital business card for T-Mobile Big Elk Mall (Store #5503) — Elkton, MD." />
+  <title>T-Mobile • Store 5503</title>
+  <meta name="description" content="Digital business card for T-Mobile Big Elk Mall Store #5503 — Elkton, MD." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     :root{
       --magenta:#e20074;
       --magenta-dark:#a00052;
-      --white:#ffffff;
-      --gray:#f5f5f5;
-      --black:#0a0a0a;
+      --ink:#111827;
+      --ink-soft:#6b7280;
+      --bg:#ffffff;
+      --line:#eee;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
-      margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial;
-      color:var(--black);
-      background:var(--white);
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      color:var(--ink);
+      background:var(--bg);
     }
-    .wrap{ max-width:720px; margin:0 auto; padding:28px; }
+    .topbar{
+      background:var(--magenta);
+      color:white;
+      padding:24px 18px 18px;
+      text-align:center;
+    }
+    .brand{
+      font-weight:800;
+      font-size:28px;
+      letter-spacing:.2px;
+    }
+    .sub{
+      margin-top:6px;
+      font-size:14px;
+      opacity:.95;
+    }
+    .pill{
+      display:inline-block;
+      margin-top:10px;
+      padding:6px 12px;
+      border-radius:999px;
+      background:white;
+      color:var(--magenta);
+      font-weight:700;
+      font-size:12px;
+    }
+    .wrap{
+      max-width:720px;
+      margin:0 auto;
+      padding:20px 18px 28px;
+      display:grid;
+      gap:16px;
+    }
     .card{
-      border-radius:16px; background:var(--white);
-      border:2px solid var(--magenta);
-      box-shadow:0 6px 20px rgba(0,0,0,.08);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px;
     }
-    header{
-      padding:24px; text-align:center; background:var(--magenta); color:var(--white);
-      border-radius:14px 14px 0 0;
+    h2{
+      margin:2px 0 10px;
+      font-size:14px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      color:var(--magenta-dark);
     }
-    header h1{margin:0; font-size:28px; font-weight:800;}
-    header .subtitle{margin-top:6px; font-size:14px; font-weight:400;}
-    .idpill{display:inline-block; margin-top:10px; padding:6px 14px; background:var(--white); color:var(--magenta); border-radius:999px; font-weight:700; font-size:13px;}
-    .content{padding:24px; display:grid; gap:20px;}
-    .panel h2{margin:0 0 10px; font-size:16px; font-weight:700; color:var(--magenta-dark);}
-    .kv{display:grid; gap:10px;}
-    .kv div{display:grid; gap:2px;}
-    .k{font-size:13px; color:#444;}
+    .row{
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      padding:12px 8px;
+      border-top:1px solid var(--line);
+    }
+    .row:first-of-type{border-top:none;}
+    .ico{
+      width:20px; height:20px; flex:0 0 20px;
+      margin-top:1px;
+    }
+    .k{font-size:12px; color:var(--ink-soft);}
     .v{font-size:15px; font-weight:600;}
-    .btn{
-      display:block; text-align:center; padding:14px; border-radius:8px; font-weight:700;
-      text-decoration:none; color:var(--white); background:var(--magenta);
-      margin-bottom:10px;
+    .actions{
+      display:grid;
+      gap:10px;
+      grid-template-columns:1fr 1fr;
     }
-    .btn:hover{background:var(--magenta-dark);}
-    footer{padding:14px; font-size:12px; color:#555; text-align:center;}
+    @media (max-width:560px){
+      .actions{grid-template-columns:1fr;}
+    }
+    .btn{
+      display:flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px;
+      border-radius:10px;
+      text-decoration:none;
+      color:white;
+      background:var(--magenta);
+      font-weight:700;
+      border:1px solid var(--magenta-dark);
+    }
+    .btn.small{
+      background:#fff;
+      color:var(--magenta);
+      border:1px solid var(--magenta);
+      font-weight:700;
+    }
+    footer{
+      text-align:center;
+      font-size:12px;
+      color:var(--ink-soft);
+      padding:8px 0 0;
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="card">
-      <header>
-        <h1>T-Mobile</h1>
-        <div class="subtitle">Big Elk Mall • Elkton, MD</div>
-        <div class="idpill">Store #5503</div>
-      </header>
-      <div class="content">
-        <section class="panel">
-          <h2>Contact</h2>
-          <div class="kv">
-            <div>
-              <span class="k">Address</span>
-              <span class="v">123A Big Elk Mall, Elkton, MD 21921</span>
-            </div>
-            <div>
-              <span class="k">Phone</span>
-              <span class="v"><a href="tel:+14432078142">(443) 207-8142</a></span>
-            </div>
-            <div>
-              <span class="k">Manager</span>
-              <span class="v">Joseph</span>
-            </div>
-            <div>
-              <span class="k">Retailer</span>
-              <span class="v">operated by Connectivity Source LLC </span>
-            </div>
-          </div>
-        </section>
-        <section class="panel">
-          <h2>Quick Links</h2>
-          <a class="btn" href="https://www.t-mobile.com/stores/bd/t-mobile-elkton-md-21921-5503" target="_blank">Store page</a>
-          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=T-Mobile%20123%20Big%20Elk%20Mall%20Elkton%20MD%2021921" target="_blank">Google reviews & directions</a>
-        </section>
-      </div>
-      <footer>
-        © T-Mobile Authorized Retailer • Connectivity Source
-      </footer>
-    </div>
+  <div class="topbar">
+    <div class="brand">T-Mobile</div>
+    <div class="sub">Big Elk Mall • Elkton, MD</div>
+    <div class="pill">Store #5503</div>
   </div>
+
+  <main class="wrap">
+    <section class="card" aria-labelledby="contact">
+      <h2 id="contact">Contact</h2>
+      <div class="row">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/></svg>
+        <div>
+          <div class="k">Address</div>
+          <div class="v">123A Big Elk Mall, Elkton, MD 21921</div>
+        </div>
+      </div>
+      <div class="row">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.8 21 3 13.2 3 3a1 1 0 011-1h3.49a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z"/></svg>
+        <div>
+          <div class="k">Phone</div>
+          <div class="v"><a href="tel:+14432078142" style="color:inherit; text-decoration:none;">(443) 207-8142</a></div>
+        </div>
+      </div>
+      <div class="row">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 12a5 5 0 100-10 5 5 0 000 10zm-7 9a7 7 0 1114 0H5z"/></svg>
+        <div>
+          <div class="k">Manager</div>
+          <div class="v">Joseph</div>
+        </div>
+      </div>
+      <div class="row">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5a2 2 0 012-2h14a2 2 0 012 2v3H3V5zm0 5h18v9a2 2 0 01-2 2H5a2 2 0 01-2-2v-9z"/></svg>
+        <div>
+          <div class="k">Retailer</div>
+          <div class="v">Owned and operated by Connectivity Source</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="links">
+      <h2 id="links">Quick links</h2>
+      <div class="actions">
+        <a class="btn" href="https://www.t-mobile.com/stores/bd/t-mobile-elkton-md-21921-5503" target="_blank" rel="noopener">
+          Store page
+        </a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=T-Mobile%20123%20Big%20Elk%20Mall%20Elkton%20MD%2021921" target="_blank" rel="noopener">
+          Google reviews
+        </a>
+      </div>
+      <div style="margin-top:10px; display:flex; gap:10px;">
+        <a class="btn small" href="tel:+14432078142">Call</a>
+        <a class="btn small" href="sms:+14432078142">Text</a>
+      </div>
+    </section>
+
+    <footer>
+      © T-Mobile Authorized Retailer • Connectivity Source
+    </footer>
+  </main>
 </body>
 </html>

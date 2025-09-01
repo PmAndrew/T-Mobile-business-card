@@ -1,179 +1,186 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>T-Mobile • Store 5503</title>
-  <meta name="description" content="Digital business card for T-Mobile Big Elk Mall Store #5503 — Elkton, MD." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DrawPrompt — Ultimate Edition</title>
   <style>
-    :root{
-      --magenta:#e20074;
-      --magenta-dark:#a00052;
-      --ink:#111827;
-      --ink-soft:#6b7280;
-      --bg:#ffffff;
-      --line:#eee;
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: linear-gradient(to bottom right, #0f172a, #4c1d95, #1e3a8a);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      color:var(--ink);
-      background:var(--bg);
+    h1 {
+      font-size: 2.25rem;
+      margin: 10px;
+      text-align: center;
     }
-    .topbar{
-      background:var(--magenta);
-      color:white;
-      padding:24px 18px 18px;
-      text-align:center;
+    .prompt-box {
+      background: rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 20px;
+      max-width: 800px;
+      text-align: center;
+      margin: 20px auto;
+      font-size: 1.2rem;
     }
-    .brand{
-      font-weight:800;
-      font-size:28px;
-      letter-spacing:.2px;
+    button {
+      background: #6366f1;
+      border: none;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 8px;
+      margin: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.2s;
     }
-    .sub{
-      margin-top:6px;
-      font-size:14px;
-      opacity:.95;
+    button:hover { background: #4f46e5; }
+    .tags { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .tag {
+      background: rgba(255,255,255,0.2);
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 0.85rem;
     }
-    .pill{
-      display:inline-block;
-      margin-top:10px;
-      padding:6px 12px;
-      border-radius:999px;
-      background:white;
-      color:var(--magenta);
-      font-weight:700;
-      font-size:12px;
+    footer {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.7);
+      margin-top: auto;
+      text-align: center;
     }
-    .wrap{
-      max-width:720px;
-      margin:0 auto;
-      padding:20px 18px 28px;
-      display:grid;
-      gap:16px;
+    .timer { font-size: 2rem; margin: 20px 0; }
+    .history, .favorites {
+      max-width: 800px;
+      margin: 20px auto;
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 15px;
+      max-height: 250px;
+      overflow-y: auto;
     }
-    .card{
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:14px;
-    }
-    h2{
-      margin:2px 0 10px;
-      font-size:14px;
-      text-transform:uppercase;
-      letter-spacing:1px;
-      color:var(--magenta-dark);
-    }
-    .row{
-      display:flex;
-      align-items:flex-start;
-      gap:12px;
-      padding:12px 8px;
-      border-top:1px solid var(--line);
-    }
-    .row:first-of-type{border-top:none;}
-    .ico{
-      width:20px; height:20px; flex:0 0 20px;
-      margin-top:1px;
-    }
-    .k{font-size:12px; color:var(--ink-soft);}
-    .v{font-size:15px; font-weight:600;}
-    .actions{
-      display:grid;
-      gap:10px;
-      grid-template-columns:1fr 1fr;
-    }
-    @media (max-width:560px){
-      .actions{grid-template-columns:1fr;}
-    }
-    .btn{
-      display:flex; align-items:center; justify-content:center; gap:10px;
-      padding:12px 14px;
-      border-radius:10px;
-      text-decoration:none;
-      color:white;
-      background:var(--magenta);
-      font-weight:700;
-      border:1px solid var(--magenta-dark);
-    }
-    .btn.small{
-      background:#fff;
-      color:var(--magenta);
-      border:1px solid var(--magenta);
-      font-weight:700;
-    }
-    footer{
-      text-align:center;
-      font-size:12px;
-      color:var(--ink-soft);
-      padding:8px 0 0;
-    }
+    .entry { font-size: 0.9rem; margin: 6px 0; padding: 6px; background: rgba(255,255,255,0.1); border-radius: 8px; }
   </style>
 </head>
 <body>
-  <div class="topbar">
-    <div class="brand">T-Mobile</div>
-    <div class="sub">Big Elk Mall • Elkton, MD</div>
-    <div class="pill">Store #5503</div>
+  <h1>🎨 DrawPrompt — Ultimate Edition</h1>
+  <div id="prompt" class="prompt-box">Press the button to get inspired!</div>
+  <div>
+    <button onclick="newPrompt()">🎲 New Prompt</button>
+    <button onclick="copyPrompt()">📋 Copy</button>
+    <button onclick="saveFavorite()">❤️ Favorite</button>
+    <button onclick="clearFavorites()">🗑 Clear Favorites</button>
   </div>
+  <div class="timer" id="timer">⏱ 05:00</div>
+  <div>
+    <button onclick="startTimer(300)">Start 5m</button>
+    <button onclick="startTimer(600)">Start 10m</button>
+    <button onclick="startTimer(900)">Start 15m</button>
+    <button onclick="pauseTimer()">Pause</button>
+    <button onclick="resetTimer()">Reset</button>
+  </div>  <div class="history">
+    <h3>📜 History</h3>
+    <div id="history"></div>
+  </div>  <div class="favorites">
+    <h3>⭐ Favorites</h3>
+    <div id="favorites"></div>
+  </div>  <footer>Tips: Roll a new prompt, set a timer, and challenge yourself! Save favorites you love. 🌌</footer>  <script>
+    const SUBJECTS = [
+      "sleepy red panda", "curious baby elephant with a tiny hat", "frog on a skateboard", "owl librarian", "whale floating with balloons", "cat wearing rain boots", "fox barista", "goose detective", "hamster astronaut", "bee with a backpack", "penguin DJ", "capybara at a spa", "giraffe in a hoodie", "raven writing a letter", "hedgehog gardener", "koala gamer", "otter holding a seashell", "wolf playing a violin", "turtle mail carrier", "octopus chef",
+      "witch on a coffee break", "time traveler stuck in 1999", "robot learning to paint", "astronomer mapping constellations", "superhero late for the bus", "pirate reading bedtime stories", "space courier delivering a parcel", "merfolk street vendor", "ghost tour guide", "knight with a rubber duck shield", "wizard barista making latte art", "archer with neon arrows", "park ranger on Mars", "mechanic for dragons",
+      "treehouse village", "cozy ramen shop", "floating island garden", "rainy neon alley", "desert library", "underwater train station", "cloud bakery", "abandoned amusement park", "moon market", "mossy ruin", "miniature city in a terrarium", "lighthouse at dusk", "crystal cave", "subway full of plants", "snowy cabin", "sunset pier", "volcanic hot springs", "starlit observatory", "rooftop garden",
+      "LEGO style SpongeBob", "Pokémon adventure scene", "galaxy marketplace", "mystical fox in purple flames", "enchanted forest of crystals", "cyberpunk city with neon skies", "dreamlike underwater castle", "floating Minecraft island base", "cute bumblebee with a crown", "robot elephant DJ", "tiny dragon curled around a pencil", "tap-dancing flamingo", "ghosts doing laundry", "haunted vending machine", "pufferfish pastry chef", "vampire at a farmer's market", "forest of glowing mushrooms", "mini LEGO castle on a desk"
+    ];
 
-  <main class="wrap">
-    <section class="card" aria-labelledby="contact">
-      <h2 id="contact">Contact</h2>
-      <div class="row">
-        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/></svg>
-        <div>
-          <div class="k">Address</div>
-          <div class="v">123A Big Elk Mall, Elkton, MD 21921</div>
-        </div>
-      </div>
-      <div class="row">
-        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.8 21 3 13.2 3 3a1 1 0 011-1h3.49a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z"/></svg>
-        <div>
-          <div class="k">Phone</div>
-          <div class="v"><a href="tel:+14432078142" style="color:inherit; text-decoration:none;">(443) 207-8142</a></div>
-        </div>
-      </div>
-      <div class="row">
-        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 12a5 5 0 100-10 5 5 0 000 10zm-7 9a7 7 0 1114 0H5z"/></svg>
-        <div>
-          <div class="k">Manager</div>
-          <div class="v">Joseph</div>
-        </div>
-      </div>
-      <div class="row">
-        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5a2 2 0 012-2h14a2 2 0 012 2v3H3V5zm0 5h18v9a2 2 0 01-2 2H5a2 2 0 01-2-2v-9z"/></svg>
-        <div>
-          <div class="k">Retailer</div>
-          <div class="v">Owned and operated by Connectivity Source</div>
-        </div>
-      </div>
-    </section>
+    const STYLES = [
+      "cute chibi", "minimal line art", "pixel art", "watercolor", "scribble sketch", "comic panel", "noir shadows", "3D clay look", "flat vector", "stained glass", "pastel aesthetic", "ink wash", "low poly", "retro 90s", "pop art", "storybook", "surreal collage", "blueprint", "neon vaporwave", "LEGO digital style", "charcoal rough", "colored pencil", "ballpoint sketch", "gouache poster", "oil impasto", "cel-shaded cartoon"
+    ];
 
-    <section class="card" aria-labelledby="links">
-      <h2 id="links">Quick links</h2>
-      <div class="actions">
-        <a class="btn" href="https://www.t-mobile.com/stores/bd/t-mobile-elkton-md-21921-5503" target="_blank" rel="noopener">
-          Store page
-        </a>
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=T-Mobile%20123%20Big%20Elk%20Mall%20Elkton%20MD%2021921" target="_blank" rel="noopener">
-          Google reviews
-        </a>
-      </div>
-      <div style="margin-top:10px;">
-        <a class="btn small" href="tel:+14432078142">Call</a>
-      </div>
-    </section>
+    const RULES = [
+      "use only 3 colors", "draw with one continuous line", "black and white only", "non-dominant hand only", "mirror symmetry", "add a hidden smiley", "make it tiny in a big world", "include a snack", "make it floating", "fill the page", "from a worm’s-eye view", "two minute doodle challenge", "add rain or snow", "dramatic lighting", "draw it as LEGO bricks", "use only circles and triangles", "draw to music tempo", "include a crown somewhere", "add sparkles or stars", "make it cozy and cute"
+    ];
 
-    <footer>
-      © T-Mobile Authorized Retailer • Connectivity Source
-    </footer>
-  </main>
-</body>
+    let currentPrompt = "";
+    let history = [];
+    let favorites = [];
+    let timerInterval;
+    let timeLeft = 300;
+
+    function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+    function newPrompt() {
+      const subject = pick(SUBJECTS);
+      const style = Math.random() > 0.3 ? `in ${pick(STYLES)} style` : "";
+      const rule = Math.random() > 0.5 ? `with rule: ${pick(RULES)}` : "";
+      currentPrompt = [subject, style, rule].filter(Boolean).join(" · ");
+      document.getElementById("prompt").innerHTML = `<div>${currentPrompt}</div>`;
+      history.unshift(currentPrompt);
+      updateHistory();
+    }
+
+    function copyPrompt() {
+      if (!currentPrompt) return;
+      navigator.clipboard.writeText(currentPrompt);
+      alert("Copied prompt: " + currentPrompt);
+    }
+
+    function saveFavorite() {
+      if (!currentPrompt || favorites.includes(currentPrompt)) return;
+      favorites.unshift(currentPrompt);
+      updateFavorites();
+    }
+
+    function clearFavorites() {
+      favorites = [];
+      updateFavorites();
+    }
+
+    function updateHistory() {
+      document.getElementById("history").innerHTML = history.map(p => `<div class='entry'>${p}</div>`).join("");
+    }
+
+    function updateFavorites() {
+      document.getElementById("favorites").innerHTML = favorites.map(p => `<div class='entry'>${p}</div>`).join("");
+    }
+
+    function startTimer(seconds) {
+      clearInterval(timerInterval);
+      timeLeft = seconds;
+      updateTimerDisplay();
+      timerInterval = setInterval(() => {
+        timeLeft--;
+        if (timeLeft <= 0) {
+          clearInterval(timerInterval);
+          alert("⏰ Time's up!");
+        }
+        updateTimerDisplay();
+      }, 1000);
+    }
+
+    function pauseTimer() {
+      clearInterval(timerInterval);
+    }
+
+    function resetTimer() {
+      clearInterval(timerInterval);
+      timeLeft = 300;
+      updateTimerDisplay();
+    }
+
+    function updateTimerDisplay() {
+      const min = String(Math.floor(timeLeft / 60)).padStart(2, '0');
+      const sec = String(timeLeft % 60).padStart(2, '0');
+      document.getElementById("timer").innerText = `⏱ ${min}:${sec}`;
+    }
+
+    window.onload = () => {
+      newPrompt();
+      updateTimerDisplay();
+    };
+  </script></body>
 </html>
